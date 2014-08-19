@@ -36,7 +36,7 @@ app.use(
     src: __dirname + '/assets', //where the sass files are 
     dest: __dirname + '/public', //where css should go
     // includePaths: __dirname + '/assets/stylesheets',
-    debug: true // obvious
+    debug: true
   })
 );
 app.use(express.static(path.join(__dirname, 'public')));
