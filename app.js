@@ -35,7 +35,6 @@ app.use(
   sass.middleware({
     src: __dirname + '/assets', //where the sass files are 
     dest: __dirname + '/public', //where css should go
-    // includePaths: __dirname + '/assets/stylesheets',
     debug: true
   })
 );
