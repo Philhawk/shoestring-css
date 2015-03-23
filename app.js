@@ -7,7 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var sass = require('node-sass');
+var sass = require('node-sass-middleware');
 var swig = require('swig');
 
 var app = express();
@@ -32,7 +32,7 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(
-  sass.middleware({
+  sass({
     src: __dirname + '/assets', //where the sass files are 
     dest: __dirname + '/public', //where css should go
     debug: true
