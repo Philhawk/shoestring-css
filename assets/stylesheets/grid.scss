@@ -1,0 +1,44 @@
+.clearfix {
+  &::after, &::before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+$gutter-size: 10px;
+
+.row {
+  @extend .clearfix;
+  margin: -$gutter-size;
+}
+
+@mixin make-col ($n) {
+  width: $n/12*100%;
+  float: left;
+  padding: $gutter-size;
+}
+
+@mixin make-cols-type ($type) {
+  @for $i from 1 through 12 {
+    .col-#{$type}-#{$i} {
+      @include make-col($i);
+    }
+  }
+}
+
+@mixin make-media-col ($min-width, $col-name) {
+  @media screen and (min-width: $min-width) {
+    @include make-cols-type($col-name);
+  }
+}
+
+$size-types: (
+  sm: 0px,
+  md: 700px,
+  lg: 1000px
+);
+
+@each $type, $size in $size-types {
+  @include make-media-col($size, $type);
+}

@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var sass = require('node-sass-middleware');
 var swig = require('swig');
 
 var app = express();
@@ -20,6 +21,8 @@ app.set('views', __dirname + '/views');
 // that and use Express's caching instead, if you like:
 app.set('view cache', false);
 
+
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
@@ -28,6 +31,13 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(
+  sass({
+    src: __dirname + '/assets', //where the sass files are 
+    dest: __dirname + '/public', //where css should go
+    debug: true
+  })
+);
 app.use(express.static(path.join(__dirname, 'public')));
 
 

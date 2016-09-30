@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #ddd; }
+  .navbar a {
+    color: #444;
+    text-decoration: none; }
+    .navbar a:hover {
+      text-decoration: underline; }
+  .navbar ul {
+    list-style-type: none; }
+
+.navbar-inverse {
+  background-color: #222222; }
+  .navbar-inverse a {
+    color: #bbbbbb; }
+
+.navbar-brand {
+  float: left;
+  font-size: 1.2em;
+  margin-top: 13px; }
+
+.navbar-right {
+  float: right; }
+
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%; }

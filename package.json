@@ -3,13 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon -e js,css,scss,html app.js",
-    "build-css": "node-sass -w assets/stylesheets/shoestring.scss -o public/stylesheets"
+    "start": "nodemon -e js,css,scss,html app.js"
   },
   "dependencies": {
     "express": "~3.4.8",
-    "node-sass": "^3.8.0",
-    "nodemon": "^1.9.2",
+    "node-sass-middleware": "^0.9.6",
     "swig": "~1.3.2"
   }
 }
